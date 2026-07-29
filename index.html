@@ -47,7 +47,7 @@
   .logo .mark{width:28px; height:28px; border-radius:8px; background:linear-gradient(135deg,var(--blue),var(--green)); position:relative; flex:none; box-shadow:0 0 18px rgba(41,182,255,0.5); animation:pulseGlow 3s ease-in-out infinite;}
   .logo .mark::after{content:""; position:absolute; inset:6px; background:var(--bg); border-radius:3px; clip-path:polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);}
   .logo .x{color:var(--blue-soft);} .logo .fire{color:var(--green-soft);}
-  .nav-links{display:flex; gap:26px; font-size:13.5px; color:var(--muted); font-weight:500; align-items:center;}
+  .nav-links{display:flex; gap:22px; font-size:13.5px; color:var(--muted); font-weight:500; align-items:center; flex-wrap:wrap; row-gap:10px;}
   .nav-links a{position:relative; padding:4px 0; transition:.15s;}
   .nav-links a:hover{color:var(--blue-soft);}
   .nav-links a::after{content:""; position:absolute; left:0; bottom:-4px; width:0; height:2px; background:linear-gradient(90deg,var(--blue),var(--green)); transition:.25s;}
@@ -260,6 +260,70 @@
   .tab{font-size:13.5px; font-weight:500; padding:9px 18px; border-radius:100px; border:1px solid var(--line); background:var(--bg-card); color:var(--muted); transition:.15s;}
   .tab:hover{border-color:rgba(41,182,255,0.4); color:var(--blue-soft);}
   .tab.active{background:linear-gradient(120deg,var(--blue),var(--green)); color:#04150c; border-color:transparent; font-weight:600;}
+
+  /* ===== ORQAGA TUGMASI ===== */
+  .back-bar{max-width:1320px; margin:0 auto; padding:18px 28px 0;}
+  .back-btn{
+    display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:var(--blue-soft);
+    background:rgba(41,182,255,0.08); border:1px solid rgba(127,212,255,0.25); border-radius:100px;
+    padding:9px 16px; cursor:pointer; transition:.2s;
+  }
+  .back-btn:hover{background:rgba(41,182,255,0.16); border-color:var(--blue); transform:translateX(-2px);}
+  .back-btn svg{width:15px; height:15px; stroke:var(--blue-soft); fill:none; stroke-width:2;}
+
+  /* ===== MAXSUS SVG BELGILAR (stiker o'rniga) ===== */
+  .nav-ico{width:16px; height:16px; flex:none; stroke:url(#icoGrad); fill:none; vertical-align:-3px;}
+  .nav-ico.sm{width:15px; height:15px;}
+  .care{width:10px; height:10px; stroke:var(--muted); fill:none; transition:.2s;}
+
+  /* ===== DROPDOWN NAV ===== */
+  .nav-drop{position:relative;}
+  .nav-drop-btn{
+    display:flex; align-items:center; gap:7px; background:none; border:none; cursor:pointer;
+    font-family:var(--font-body); font-size:13.5px; color:var(--muted); font-weight:500; padding:4px 0;
+  }
+  .nav-drop-btn:hover{color:var(--blue-soft);}
+  .nav-drop-btn:hover .care{transform:rotate(180deg);}
+  .nav-drop-menu{
+    position:absolute; top:calc(100% + 16px); left:50%; transform:translateX(-50%) translateY(6px);
+    background:rgba(10,16,30,0.98); border:1px solid var(--line); border-radius:14px; padding:8px;
+    min-width:230px; box-shadow:0 20px 50px rgba(0,0,0,0.55); backdrop-filter:blur(14px);
+    display:none; flex-direction:column; gap:2px; z-index:60;
+  }
+  .nav-drop-menu.open{display:flex;}
+  .nav-drop-menu a{
+    display:flex; align-items:center; gap:10px; padding:9px 12px; border-radius:9px; font-size:13px; font-weight:500;
+    color:#c3d3e8; transition:.15s;
+  }
+  .nav-drop-menu a:hover{background:rgba(41,182,255,0.1); color:var(--blue-soft);}
+
+  /* ===== DEMO KARTALAR (Turnir / Yangiliklar) ===== */
+  .ph-generic{max-width:1320px; margin:0 auto; padding:36px 28px 8px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .demo-grid{max-width:1320px; margin:0 auto; padding:20px 28px 60px; display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  .demo-card{background:var(--bg-card); border:1px solid var(--line); border-radius:16px; padding:20px; transition:.2s;}
+  .demo-card:hover{transform:translateY(-4px); border-color:rgba(41,182,255,0.35); box-shadow:0 14px 30px rgba(0,0,0,0.4);}
+  .demo-card .dtag{display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:var(--green-soft); background:rgba(51,255,160,0.09); border:1px solid rgba(51,255,160,0.25); padding:4px 10px; border-radius:100px; margin-bottom:12px;}
+  .demo-card h4{font-size:15.5px; margin-bottom:8px; line-height:1.35;}
+  .demo-card p{font-size:12.5px; color:var(--muted); line-height:1.6;}
+  .demo-card .dmeta{margin-top:14px; font-size:11.5px; color:var(--muted); display:flex; justify-content:space-between; border-top:1px solid var(--line); padding-top:12px;}
+  .empty-note{max-width:1320px; margin:0 auto; padding:0 28px 20px; color:var(--muted); font-size:13px;}
+
+  /* ===== NICKNAME GENERATOR ===== */
+  .nick-box{max-width:760px; margin:0 auto; padding:10px 28px 70px;}
+  .nick-panel{background:var(--bg-card); border:1px solid var(--line); border-radius:18px; padding:26px;}
+  .nick-row{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:18px;}
+  .nick-results{display:flex; flex-direction:column; gap:10px; min-height:60px;}
+  .nick-chip{
+    display:flex; align-items:center; justify-content:space-between; background:var(--bg-panel);
+    border:1px solid var(--line); border-radius:12px; padding:13px 16px; font-family:var(--font-display);
+    font-size:15.5px; font-weight:600; letter-spacing:.3px;
+  }
+  .nick-chip button{font-size:11px; font-weight:600; color:var(--muted); background:none; border:1px solid var(--line); border-radius:8px; padding:5px 10px; cursor:pointer; font-family:var(--font-body);}
+  .nick-chip button:hover{color:var(--blue-soft); border-color:var(--blue);}
+
+  /* ===== TURNIR RO'YXATDAN O'TISH FORM ===== */
+  .tform{max-width:520px; margin:0 auto; padding:10px 28px 60px;}
+  .tform .field{margin-bottom:16px;}
 
   /* SHORTS STRIP */
   .shorts-section{max-width:1320px; margin:0 auto; padding:0 28px 44px;}
@@ -696,15 +760,82 @@
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="icoGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7fd4ff"/><stop offset="100%" stop-color="#9dffce"/>
+    </linearGradient>
+    <symbol id="ic-back" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ic-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ic-play" viewBox="0 0 24 24"><path d="M6 4l14 8-14 8V4z" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="ic-sliders" viewBox="0 0 24 24"><path d="M4 6h10M4 18h6M18 18h2M14 6h6M8 14h12M4 14h0" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="6" r="2" stroke-width="2"/><circle cx="8" cy="14" r="2" stroke-width="2"/></symbol>
+    <symbol id="ic-spark" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="ic-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z" stroke-width="2" stroke-linejoin="round"/><path d="M8 5H5a3 3 0 0 0 3 5M16 5h3a3 3 0 0 1-3 5M12 13v3M9 20h6M9.5 20c0-2 1-2.5 2.5-2.5s2.5.5 2.5 2.5" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ic-list" viewBox="0 0 24 24"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ic-gift" viewBox="0 0 24 24"><path d="M4 9h16v11H4V9zM4 9V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3M12 4v16M12 9c0-3-2-5-4-5s-2 3 0 5M12 9c0-3 2-5 4-5s2 3 0 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="ic-userplus" viewBox="0 0 24 24"><circle cx="10" cy="8" r="4" stroke-width="2"/><path d="M2 21c0-4 3.5-7 8-7s8 3 8 7M19 8v6M22 11h-6" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ic-chart" viewBox="0 0 24 24"><path d="M4 20V10M12 20V4M20 20v-7" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ic-news" viewBox="0 0 24 24"><path d="M4 4h13a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4z" stroke-width="2" stroke-linejoin="round"/><path d="M7 8h7M7 12h7M7 16h4" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ic-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6V3z" stroke-width="2" stroke-linejoin="round"/><path d="M14 3v4h4M9 12h6M9 16h6" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ic-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ic-box" viewBox="0 0 24 24"><path d="M3 8l9-5 9 5-9 5-9-5z" stroke-width="2" stroke-linejoin="round"/><path d="M3 8v9l9 5 9-5V8M12 13v9" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="ic-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke-width="2"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ic-paw" viewBox="0 0 24 24"><circle cx="6" cy="9" r="2" stroke-width="2"/><circle cx="12" cy="6" r="2" stroke-width="2"/><circle cx="18" cy="9" r="2" stroke-width="2"/><path d="M8 18c-2 0-3-1.7-3-3.3 0-2 1.8-3.2 4-3.2h6c2.2 0 4 1.2 4 3.2C19 16.3 18 18 16 18c-1.4 0-2-1-4-1s-2.6 1-4 1z" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="ic-boy" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4" stroke-width="2"/><path d="M12 3v1.2M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ic-girl" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke-width="2"/><path d="M8 4.5C9 3 15 3 16 4.5M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ic-hash" viewBox="0 0 24 24"><path d="M5 9h14M5 15h14M10 4L8 20M16 4l-2 16" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ic-type" viewBox="0 0 24 24"><path d="M5 6h14M12 6v13M9 19h6" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="ic-shuffle" viewBox="0 0 24 24"><path d="M4 6h4l9 12h3M4 18h4l3-4M16 6h4v4M16 18h4v-4M13 6l3 3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
 <div class="wrap">
 
   <header>
     <div class="header-inner">
       <a href="#" data-view="home" class="logo"><span class="mark"></span><span class="x">Xon</span><span class="fire">fire</span></a>
       <div class="nav-links">
-        <a href="#" data-view="video">Video markaz</a>
-        <a href="#" data-view="nastroyka">Nastroykalar</a>
-        <a href="#" data-view="ai">AI Generator</a>
+        <a href="#" data-view="video"><svg class="nav-ico"><use href="#ic-play"></use></svg> Video markaz</a>
+        <a href="#" data-view="nastroyka"><svg class="nav-ico"><use href="#ic-sliders"></use></svg> Nastroykalar</a>
+        <a href="#" data-view="ai"><svg class="nav-ico"><use href="#ic-spark"></use></svg> AI Generator</a>
+
+        <div class="nav-drop">
+          <button class="nav-drop-btn" onclick="toggleDrop(event,this)">
+            <svg class="nav-ico"><use href="#ic-trophy"></use></svg> Turnirlar <svg class="care"><use href="#ic-chevron"></use></svg>
+          </button>
+          <div class="nav-drop-menu">
+            <a href="#" data-view="turnir" data-tab="list"><svg class="nav-ico sm"><use href="#ic-list"></use></svg> Turnirlar ro'yxati</a>
+            <a href="#" data-view="turnir" data-tab="prizes"><svg class="nav-ico sm"><use href="#ic-gift"></use></svg> Mukofotlar</a>
+            <a href="#" data-view="turnir" data-tab="register"><svg class="nav-ico sm"><use href="#ic-userplus"></use></svg> Ro'yxatdan o'tish</a>
+            <a href="#" data-view="turnir" data-tab="results"><svg class="nav-ico sm"><use href="#ic-chart"></use></svg> Natijalar</a>
+          </div>
+        </div>
+
+        <div class="nav-drop">
+          <button class="nav-drop-btn" onclick="toggleDrop(event,this)">
+            <svg class="nav-ico"><use href="#ic-news"></use></svg> Yangiliklar <svg class="care"><use href="#ic-chevron"></use></svg>
+          </button>
+          <div class="nav-drop-menu">
+            <a href="#" data-view="yangiliklar" data-tab="patch"><svg class="nav-ico sm"><use href="#ic-file"></use></svg> Patch Note</a>
+            <a href="#" data-view="yangiliklar" data-tab="events"><svg class="nav-ico sm"><use href="#ic-calendar"></use></svg> Eventlar</a>
+            <a href="#" data-view="yangiliklar" data-tab="bundle"><svg class="nav-ico sm"><use href="#ic-box"></use></svg> Yangi Bundle</a>
+            <a href="#" data-view="yangiliklar" data-tab="character"><svg class="nav-ico sm"><use href="#ic-user"></use></svg> Yangi Character</a>
+            <a href="#" data-view="yangiliklar" data-tab="pet"><svg class="nav-ico sm"><use href="#ic-paw"></use></svg> Yangi Pet</a>
+          </div>
+        </div>
+
+        <div class="nav-drop">
+          <button class="nav-drop-btn" onclick="toggleDrop(event,this)">
+            <svg class="nav-ico"><use href="#ic-spark"></use></svg> Nickname Generator <svg class="care"><use href="#ic-chevron"></use></svg>
+          </button>
+          <div class="nav-drop-menu">
+            <a href="#" data-view="nickname" data-tab="boys"><svg class="nav-ico sm"><use href="#ic-boy"></use></svg> O'g'il bolalar</a>
+            <a href="#" data-view="nickname" data-tab="girls"><svg class="nav-ico sm"><use href="#ic-girl"></use></svg> Qizlar</a>
+            <a href="#" data-view="nickname" data-tab="symbols"><svg class="nav-ico sm"><use href="#ic-hash"></use></svg> Belgili</a>
+            <a href="#" data-view="nickname" data-tab="nosymbols"><svg class="nav-ico sm"><use href="#ic-type"></use></svg> Belgisiz</a>
+            <a href="#" data-view="nickname" data-tab="random"><svg class="nav-ico sm"><use href="#ic-shuffle"></use></svg> Random generator</a>
+          </div>
+        </div>
       </div>
       <a href="#" data-view="auth" class="nav-cta" id="navAuthBtn">Kirish / Ro'yxatdan o'tish</a>
     </div>
@@ -795,6 +926,7 @@
   </div>
 </section>
 <section id="view-video" class="view">
+<div class="back-bar"><button class="back-btn" onclick="showView('home')"><svg><use href="#ic-back"></use></svg> Orqaga</button></div>
 
 <div class="ph-video">
     <div>
@@ -832,6 +964,7 @@
 
 </section>
 <section id="view-nastroyka" class="view">
+<div class="back-bar"><button class="back-btn" onclick="showView('home')"><svg><use href="#ic-back"></use></svg> Orqaga</button></div>
 <div class="ph-nas">
     <span class="eyebrow">Nastroykalar</span>
     <h1>Telefon nastroykalari</h1>
@@ -859,6 +992,7 @@
   </div>
 </section>
 <section id="view-ai" class="view">
+<div class="back-bar"><button class="back-btn" onclick="showView('home')"><svg><use href="#ic-back"></use></svg> Orqaga</button></div>
 <div class="ph-ai">
     <span class="eyebrow">AI bo'limi</span>
     <h1>AI Nastroyka Generator</h1>
@@ -898,6 +1032,7 @@
   <div class="list-note"><b>50 ta hamyonbop telefon</b> ro'yxati AI modelida mavjud — narxi past, ammo Free Fire uchun eng ko'p qidiriladigan modellar tanlab olindi.</div>
 </section>
 <section id="view-auth" class="view">
+<div class="back-bar"><button class="back-btn" onclick="showView('home')"><svg><use href="#ic-back"></use></svg> Orqaga</button></div>
 <!-- AUTH SCREEN -->
   <div class="auth-screen" id="authScreen">
     <div class="auth-side">
@@ -1000,7 +1135,63 @@
     </div>
   </div>
 </section>
-<footer>© 2026 Xonfire. Free Fire fanlari uchun yaratilgan.</footer>
+
+<!-- ===== TURNIRLAR ===== -->
+<section id="view-turnir" class="view">
+<div class="back-bar"><button class="back-btn" onclick="showView('home')"><svg><use href="#ic-back"></use></svg> Orqaga</button></div>
+<div class="ph-generic">
+  <div><span class="eyebrow">🏆 Turnirlar</span><h1 style="font-family:var(--font-display); font-size:26px; font-weight:700; margin-top:6px;">Xonfire turnirlar markazi</h1></div>
+</div>
+<div class="tabs" id="turnirTabs">
+  <div class="tab active" data-tab="list" onclick="switchTurnirTab('list')"><svg class="nav-ico sm" style="margin-right:6px;"><use href="#ic-list"></use></svg>Turnirlar ro'yxati</div>
+  <div class="tab" data-tab="prizes" onclick="switchTurnirTab('prizes')"><svg class="nav-ico sm" style="margin-right:6px;"><use href="#ic-gift"></use></svg>Mukofotlar</div>
+  <div class="tab" data-tab="register" onclick="switchTurnirTab('register')"><svg class="nav-ico sm" style="margin-right:6px;"><use href="#ic-userplus"></use></svg>Ro'yxatdan o'tish</div>
+  <div class="tab" data-tab="results" onclick="switchTurnirTab('results')"><svg class="nav-ico sm" style="margin-right:6px;"><use href="#ic-chart"></use></svg>Natijalar</div>
+</div>
+<div id="turnirContent"></div>
+</section>
+
+<!-- ===== YANGILIKLAR ===== -->
+<section id="view-yangiliklar" class="view">
+<div class="back-bar"><button class="back-btn" onclick="showView('home')"><svg><use href="#ic-back"></use></svg> Orqaga</button></div>
+<div class="ph-generic">
+  <div><span class="eyebrow">📰 Yangiliklar</span><h1 style="font-family:var(--font-display); font-size:26px; font-weight:700; margin-top:6px;">So'nggi yangiliklar</h1></div>
+</div>
+<div class="tabs" id="newsTabs">
+  <div class="tab active" data-tab="patch" onclick="switchNewsTab('patch')"><svg class="nav-ico sm" style="margin-right:6px;"><use href="#ic-file"></use></svg>Patch Note</div>
+  <div class="tab" data-tab="events" onclick="switchNewsTab('events')"><svg class="nav-ico sm" style="margin-right:6px;"><use href="#ic-calendar"></use></svg>Eventlar</div>
+  <div class="tab" data-tab="bundle" onclick="switchNewsTab('bundle')"><svg class="nav-ico sm" style="margin-right:6px;"><use href="#ic-box"></use></svg>Yangi Bundle</div>
+  <div class="tab" data-tab="character" onclick="switchNewsTab('character')"><svg class="nav-ico sm" style="margin-right:6px;"><use href="#ic-user"></use></svg>Yangi Character</div>
+  <div class="tab" data-tab="pet" onclick="switchNewsTab('pet')"><svg class="nav-ico sm" style="margin-right:6px;"><use href="#ic-paw"></use></svg>Yangi Pet</div>
+</div>
+<div id="newsContent"></div>
+</section>
+
+<!-- ===== NICKNAME GENERATOR ===== -->
+<section id="view-nickname" class="view">
+<div class="back-bar"><button class="back-btn" onclick="showView('home')"><svg><use href="#ic-back"></use></svg> Orqaga</button></div>
+<div class="ph-generic">
+  <div><span class="eyebrow">🎨 Nickname Generator</span><h1 style="font-family:var(--font-display); font-size:26px; font-weight:700; margin-top:6px;">O'zingizga nom tanlang</h1></div>
+</div>
+<div class="tabs" id="nickTabs">
+  <div class="tab active" data-tab="boys" onclick="switchNickTab('boys')"><svg class="nav-ico sm" style="margin-right:6px;"><use href="#ic-boy"></use></svg>O'g'il bolalar</div>
+  <div class="tab" data-tab="girls" onclick="switchNickTab('girls')"><svg class="nav-ico sm" style="margin-right:6px;"><use href="#ic-girl"></use></svg>Qizlar</div>
+  <div class="tab" data-tab="symbols" onclick="switchNickTab('symbols')"><svg class="nav-ico sm" style="margin-right:6px;"><use href="#ic-hash"></use></svg>Belgili</div>
+  <div class="tab" data-tab="nosymbols" onclick="switchNickTab('nosymbols')"><svg class="nav-ico sm" style="margin-right:6px;"><use href="#ic-type"></use></svg>Belgisiz</div>
+  <div class="tab" data-tab="random" onclick="switchNickTab('random')"><svg class="nav-ico sm" style="margin-right:6px;"><use href="#ic-shuffle"></use></svg>Random generator</div>
+</div>
+<div class="nick-box">
+  <div class="nick-panel">
+    <div class="nick-row">
+      <input type="text" id="nickBaseInput" placeholder="Ismingiz yoki so'z (ixtiyoriy)..." style="flex:1; min-width:180px; background:var(--bg-panel); border:1px solid var(--line); border-radius:9px; padding:12px 14px; color:var(--text); font-size:14px; font-family:var(--font-body); outline:none;">
+      <button class="btn btn-glow" onclick="generateNicks()">✨ Generatsiya qilish</button>
+    </div>
+    <div class="nick-results" id="nickResults">
+      <div class="empty-block" style="border:none; padding:20px 0;"><b>Hali natija yo'q</b>Yuqoridagi tugmani bosib nicklar generatsiya qiling.</div>
+    </div>
+  </div>
+</div>
+</section>
 </div>
 <!-- UPLOAD MODAL -->
 <div class="overlay" id="uploadModal">
@@ -1805,10 +1996,18 @@
     video: "Video markaz — Xonfire",
     nastroyka: "Telefon nastroykalari — Xonfire",
     ai: "AI Nastroyka Generator — Xonfire",
-    auth: "Akkaunt — Xonfire"
+    auth: "Akkaunt — Xonfire",
+    turnir: "Turnirlar — Xonfire",
+    yangiliklar: "Yangiliklar — Xonfire",
+    nickname: "Nickname Generator — Xonfire"
   };
 
-  function showView(name){
+  const subTabSwitchers = { turnir: switchTurnirTabRef, yangiliklar: switchNewsTabRef, nickname: switchNickTabRef };
+  function switchTurnirTabRef(t){ switchTurnirTab(t); }
+  function switchNewsTabRef(t){ switchNewsTab(t); }
+  function switchNickTabRef(t){ switchNickTab(t); }
+
+  function showView(name, tab){
     if(!viewTitles[name]) name = 'home';
     document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
     const target = document.getElementById('view-' + name);
@@ -1817,6 +2016,7 @@
       a.classList.toggle('active-link', a.dataset.view === name);
     });
     document.title = viewTitles[name];
+    if(tab && subTabSwitchers[name]) subTabSwitchers[name](tab);
     window.scrollTo({top:0, left:0, behavior:'instant'});
   }
 
@@ -1826,13 +2026,22 @@
     btn.textContent = user ? ('👤 ' + user.name) : "Kirish / Ro'yxatdan o'tish";
   }
 
+  function toggleDrop(e, btn){
+    e.stopPropagation();
+    const menu = btn.nextElementSibling;
+    const isOpen = menu.classList.contains('open');
+    document.querySelectorAll('.nav-drop-menu.open').forEach(m=>m.classList.remove('open'));
+    if(!isOpen) menu.classList.add('open');
+  }
+  document.addEventListener('click', ()=> document.querySelectorAll('.nav-drop-menu.open').forEach(m=>m.classList.remove('open')));
+
   // Any internal navigation control (nav links, hero buttons, quick menu, "see all") uses
   // data-view instead of real hrefs, so clicking never leaves the page or reloads it.
   document.addEventListener('click', function(e){
     const el = e.target.closest('[data-view]');
     if(el){
       e.preventDefault();
-      showView(el.dataset.view);
+      showView(el.dataset.view, el.dataset.tab);
       return;
     }
     // Any other bare '#' link (decorative) should also never jump/reload the page.
@@ -1840,7 +2049,145 @@
     if(bare) e.preventDefault();
   });
 
+  /* ===== TURNIRLAR ===== */
+  const tournaments = [
+    {name:"Xonfire Weekly Cup #14", date:"3-avgust, 2026", prize:"1 500 000 so'm", teams:"32/32 jamoa", status:"Ro'yxat ochiq"},
+    {name:"Solo Showdown — Osiyo", date:"9-avgust, 2026", prize:"3 000 000 so'm", teams:"86/100 o'yinchi", status:"Ro'yxat ochiq"},
+    {name:"Xonfire Squad Championship", date:"22-avgust, 2026", prize:"8 000 000 so'm", teams:"18/24 jamoa", status:"Tez orada"},
+    {name:"Community Clash #9", date:"29-avgust, 2026", prize:"600 000 so'm", teams:"12/16 jamoa", status:"Ro'yxat ochiq"}
+  ];
+  const prizeTiers = [
+    {place:"🥇 1-o'rin", prize:"Naqd pul + Diamantlar + Eksklyuziv bundle"},
+    {place:"🥈 2-o'rin", prize:"Naqd pul + Diamantlar"},
+    {place:"🥉 3-o'rin", prize:"Diamantlar + Skinlar to'plami"},
+    {place:"4-8 o'rinlar", prize:"Diamant sertifikatlari"},
+    {place:"MVP o'yinchi", prize:"Alohida sovg'a + profilga maxsus belgi"}
+  ];
+  const tournamentResults = [
+    {name:"Xonfire Weekly Cup #13", winner:"ClutchKing Squad", date:"27-iyul, 2026"},
+    {name:"Solo Showdown #7", winner:"ProSniper_UZ", date:"20-iyul, 2026"},
+    {name:"Community Clash #8", winner:"MOTIGNA Team", date:"13-iyul, 2026"}
+  ];
+
+  function switchTurnirTab(tab){
+    document.querySelectorAll('#turnirTabs .tab').forEach(t=>t.classList.toggle('active', t.dataset.tab===tab));
+    const el = document.getElementById('turnirContent');
+    if(tab==='list'){
+      el.innerHTML = `<div class="demo-grid">${tournaments.map(t=>`
+        <div class="demo-card"><span class="dtag">${t.status}</span><h4>${t.name}</h4>
+        <p>📅 ${t.date}<br>🏆 Mukofot: ${t.prize}</p>
+        <div class="dmeta"><span>${t.teams}</span><span style="color:var(--green-soft); cursor:pointer;" onclick="showView('turnir','register')">Qatnashish →</span></div></div>`).join('')}</div>`;
+    } else if(tab==='prizes'){
+      el.innerHTML = `<div class="demo-grid">${prizeTiers.map(p=>`
+        <div class="demo-card"><h4>${p.place}</h4><p>${p.prize}</p></div>`).join('')}</div>
+        <p class="empty-note">Mukofot miqdorlari turnir darajasi va ishtirokchilar soniga qarab farq qilishi mumkin.</p>`;
+    } else if(tab==='results'){
+      el.innerHTML = `<div class="demo-grid">${tournamentResults.map(r=>`
+        <div class="demo-card"><span class="dtag">Yakunlangan</span><h4>${r.name}</h4>
+        <p>🏆 G'olib: <b style="color:var(--green-soft);">${r.winner}</b></p>
+        <div class="dmeta"><span>${r.date}</span></div></div>`).join('')}</div>`;
+    } else if(tab==='register'){
+      el.innerHTML = `<div class="tform"><div class="field">
+          <label>Ismingiz</label><input type="text" id="tName" placeholder="To'liq ismingiz">
+        </div>
+        <div class="field"><label>Free Fire ID</label><input type="text" id="tFFID" placeholder="masalan, 123456789"></div>
+        <div class="field"><label>Jamoa nomi (ixtiyoriy)</label><input type="text" id="tTeam" placeholder="Jamoangiz nomi"></div>
+        <div class="field"><label>Qaysi turnir?</label>
+          <select id="tTour">${tournaments.map(t=>`<option>${t.name}</option>`).join('')}</select>
+        </div>
+        <button type="button" class="submit-btn" onclick="submitTournamentReg()">Ariza yuborish</button></div>`;
+    }
+  }
+
+  function submitTournamentReg(){
+    const name = document.getElementById('tName').value.trim();
+    const ffid = document.getElementById('tFFID').value.trim();
+    if(!name || !ffid){ showToast('Ism va Free Fire ID kiritilishi shart'); return; }
+    showToast('Ariza yuborildi ✓ Tez orada siz bilan bog\'lanishadi');
+    document.getElementById('tName').value = '';
+    document.getElementById('tFFID').value = '';
+    document.getElementById('tTeam').value = '';
+  }
+
+  /* ===== YANGILIKLAR ===== */
+  const newsData = {
+    patch: [
+      {t:"OB48 Patch Note — balans o'zgarishlari", d:"26-iyul, 2026", s:"Qurollar zarariga tuzatishlar, yangi xarita zonasi va UI yaxshilanishlari kiritildi."},
+      {t:"OB47.5 mini-patch", d:"14-iyul, 2026", s:"Server barqarorligi va lag muammolari bo'yicha tuzatishlar."}
+    ],
+    events: [
+      {t:"Booyah Pass — yangi fasl boshlandi", d:"25-iyul, 2026", s:"Yangi missiyalar va eksklyuziv skinlar bilan mavsumiy Booyah Pass ochildi."},
+      {t:"Diamond Royale — yozgi aylanish", d:"20-iyul, 2026", s:"Cheklangan vaqtli yozgi to'plam Diamond Royale aylanmasiga qo'shildi."}
+    ],
+    bundle: [
+      {t:"Shadow Reaper Bundle", d:"22-iyul, 2026", s:"Qorong'u temadagi yangi to'liq bundle do'konga chiqdi."},
+      {t:"Neon Racer to'plami", d:"16-iyul, 2026", s:"Kelib chiqishi yorqin neon uslubdagi yangi to'plam qo'shildi."}
+    ],
+    character: [
+      {t:"Yangi Character: Kairo", d:"18-iyul, 2026", s:"Qo'shimcha yugurish tezligi beruvchi qobiliyatga ega yangi personaj chiqdi."}
+    ],
+    pet: [
+      {t:"Yangi Pet: Mochi", d:"12-iyul, 2026", s:"Yiqilishda zarar kamaytiruvchi qobiliyatga ega sirli yangi pet qo'shildi."}
+    ]
+  };
+  function switchNewsTab(tab){
+    document.querySelectorAll('#newsTabs .tab').forEach(t=>t.classList.toggle('active', t.dataset.tab===tab));
+    const list = newsData[tab] || [];
+    document.getElementById('newsContent').innerHTML = `<div class="demo-grid">${list.map(n=>`
+      <div class="demo-card"><span class="dtag">Yangilik</span><h4>${n.t}</h4><p>${n.s}</p>
+      <div class="dmeta"><span>📅 ${n.d}</span></div></div>`).join('')}</div>`;
+  }
+
+  /* ===== NICKNAME GENERATOR ===== */
+  const nickWordsBoys = ["Zoro","Kage","Ryuk","Vertex","Drako","Kaizer","Hunter","Storm","Blaze","Ronin","Fenrir","Shino"];
+  const nickWordsGirls = ["Luna","Sakura","Miu","Aiko","Crystal","Nova","Yuki","Aria","Kira","Reina","Amara","Selene"];
+  const nickSymbolsSet = ["꧁","࿐","☬","⚔","✦","∆","×","☠"];
+  const nickSuffixes = ["FF","Pro","UZ","XM","Rex","King","07","YT"];
+  function rand2(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+  let currentNickTab = 'boys';
+  function switchNickTab(tab){
+    currentNickTab = tab;
+    document.querySelectorAll('#nickTabs .tab').forEach(t=>t.classList.toggle('active', t.dataset.tab===tab));
+    document.getElementById('nickResults').innerHTML = `<div class="empty-block" style="border:none; padding:20px 0;"><b>Hali natija yo'q</b>Yuqoridagi tugmani bosib nicklar generatsiya qiling.</div>`;
+  }
+  function buildNick(base, withSymbols, gender){
+    const pool = gender==='girls' ? nickWordsGirls : gender==='boys' ? nickWordsBoys : Math.random()>0.5 ? nickWordsBoys : nickWordsGirls;
+    let core = base || rand2(pool);
+    core = core.charAt(0).toUpperCase() + core.slice(1);
+    const useSuffix = Math.random() > 0.4;
+    let name = useSuffix ? `${core}${rand2(nickSuffixes)}` : `${core}${Math.floor(Math.random()*99)}`;
+    if(withSymbols){
+      const s1 = rand2(nickSymbolsSet), s2 = rand2(nickSymbolsSet);
+      name = `${s1}${name}${s2}`;
+    }
+    return name;
+  }
+  function generateNicks(){
+    const base = document.getElementById('nickBaseInput').value.trim();
+    let withSymbols, gender;
+    if(currentNickTab==='boys'){ gender='boys'; withSymbols=false; }
+    else if(currentNickTab==='girls'){ gender='girls'; withSymbols=false; }
+    else if(currentNickTab==='symbols'){ gender='any'; withSymbols=true; }
+    else if(currentNickTab==='nosymbols'){ gender='any'; withSymbols=false; }
+    else { gender='any'; withSymbols=Math.random()>0.5; }
+
+    const results = [];
+    for(let i=0;i<5;i++){
+      let n;
+      do{ n = buildNick(base, withSymbols, gender); } while(results.includes(n));
+      results.push(n);
+    }
+    document.getElementById('nickResults').innerHTML = results.map(n=>`
+      <div class="nick-chip"><span>${n}</span><button onclick="copyNick(this, '${n.replace(/'/g,"\\'")}')">Nusxalash</button></div>`).join('');
+  }
+  function copyNick(btn, text){
+    if(navigator.clipboard){ navigator.clipboard.writeText(text).catch(()=>{}); }
+    showToast('Nusxalandi: ' + text);
+  }
+
   showView('home');
+  switchTurnirTab('list');
+  switchNewsTab('patch');
 
 </script>
 </body>
